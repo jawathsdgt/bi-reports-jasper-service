@@ -230,7 +230,7 @@ public class Application implements CommandLineRunner {
                 "    }\n" +
                 "  ]\n" +
                 "}";
-		JasperUtils.compileReport("rpt_users");
-        JasperUtils.exportToPdf("rpt_users",null,test);
+//		JasperUtils.compileReport("rpt_users");
+//        JasperUtils.exportToPdf("rpt_users",null,test);
 	}
 }

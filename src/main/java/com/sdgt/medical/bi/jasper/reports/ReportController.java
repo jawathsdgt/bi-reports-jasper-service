@@ -33,7 +33,8 @@ public class ReportController {
             if(StringUtils.isEmpty(report)) throw new RuntimeException("no report found for "+report);
 
             response.setContentType("application/pdf");
-            response.setHeader("Content-Disposition", String.format("attachment; filename=\""+report+".pdf\""));
+            response.setHeader("Content-Disposition",
+                    String.format("attachment; filename=\""+report+".pdf\""));
             OutputStream out = response.getOutputStream();
             Map<String, String[]> parameterMap = request.getParameterMap();
             Map<String,Object> stmap= new HashMap<>();

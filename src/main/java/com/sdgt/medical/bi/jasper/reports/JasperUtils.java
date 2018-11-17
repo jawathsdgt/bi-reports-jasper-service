@@ -34,11 +34,12 @@ public class JasperUtils {
 
         report = getFileName(report,"jasper");
 //        StringBuilder readLine = getStringBuilder();
-
+        if(! new File(report).exists()) throw new RuntimeException("file not found"+report);
         ByteArrayInputStream jsonDataStream = new ByteArrayInputStream(payload.getBytes());
 
         JsonDataSource ds = new JsonDataSource(jsonDataStream);
 //		ds.subDataSource();
+
 
         JasperReport jr =(JasperReport) JRLoader.loadObject(
                 new File(report));
@@ -68,10 +69,13 @@ public class JasperUtils {
     public static JasperReport compileReport(String report) {
         try {
 
-            String path = new File( "reports/rpt_users.jrxml").getAbsolutePath();
+            File file = new File("reports/" + report + ".jrxml");
+            if(!file.exists()){
+                throw  new RuntimeException("file not found");
+            }
+            String path = file.getAbsolutePath();
             JasperReport jasperReport2 = JasperCompileManager.compileReport(path);
             JRSaver.saveObject(jasperReport2, new File( getFileName(report,"jasper")));
-            System.out.println("suceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             return jasperReport2;
         } catch (Exception e) {
             e.printStackTrace();

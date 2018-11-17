@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>bi.jasper.reports</name>
+	<name>Jasper reports server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -45,22 +45,13 @@
 			<artifactId>jasperreports</artifactId>
 			<version>6.4.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<!--<dependency>-->
 			<!--<groupId>org.springframework</groupId>-->
 			<!--<artifactId>spring-webmvc</artifactId>-->
 			<!--<scope>provided</scope>-->
 		<!--</dependency>-->
-
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- jasper -->
 
