@@ -54,7 +54,6 @@ public class JasperUtils {
 //		InputStream in;
         StringBuilder readLine= new StringBuilder();
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
-        System.out.println("==========================================");
         String s = br.readLine();
         while ( s != null) {
 
