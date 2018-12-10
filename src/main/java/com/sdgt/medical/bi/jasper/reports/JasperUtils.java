@@ -77,9 +77,8 @@ public class JasperUtils {
             JRSaver.saveObject(jasperReport2, new File( getFileName(report,"jasper")));
             return jasperReport2;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(" Exception while compiling the report "+report,e);
         }
-        return null;
     }
 
     private static String getFileName(String report,String ext) {
