@@ -26,6 +26,7 @@ public class ReportController {
             response.setContentType("application/pdf");
             response.setHeader("Content-Disposition",
                     String.format("attachment; filename=\""+report+".pdf\""));
+            response.setHeader("Accept-Ranges","bytes");
             OutputStream out = response.getOutputStream();
             Map<String, String[]> parameterMap = request.getParameterMap();
             Map<String,Object> stmap= new HashMap<>();
