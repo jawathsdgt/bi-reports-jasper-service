@@ -43,7 +43,8 @@ public class JasperUtils {
 
         JasperReport jr =(JasperReport) JRLoader.loadObject(
                 new File(report));
-
+        String dir = getDir();
+        parameters.put("SUBREPORT_DIR",dir);
         JasperPrint print = JasperFillManager.fillReport(jr
                 , parameters, ds);
         return print;
@@ -79,6 +80,14 @@ public class JasperUtils {
         } catch (Exception e) {
             throw new RuntimeException(" Exception while compiling the report "+report,e);
         }
+    }
+
+    private static String getDir() {
+        File dir = new File("reports" );
+        if(!dir.exists()){
+            throw  new RuntimeException("dir not found");
+        }
+        return dir.getAbsolutePath()+ File.separator;
     }
 
     private static String getFileName(String report,String ext) {
